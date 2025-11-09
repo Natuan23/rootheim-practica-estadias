@@ -11,12 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('tareas', function (Blueprint $table) {
-            $table->id();
-            $table->text('description')->nullable();
-            $table->boolean('completada')->default(false);
-            $table->timestamps();
-        });
+       Schema::create('tareas', function (Blueprint $table) {
+    $table->id();
+    $table->string('titulo'); // ¡Esta línea debe estar!
+    $table->text('descripcion')->nullable(); 
+    $table->boolean('completada')->default(false); 
+    $table->timestamps();
+});
     }
 
     /**
